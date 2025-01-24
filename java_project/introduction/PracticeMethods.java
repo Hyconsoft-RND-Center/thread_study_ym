@@ -1,7 +1,7 @@
-package java_project;
+package java_project.introduction;
 
 public class PracticeMethods {
-    /** TODO
+    /*TODO
      * 실습 예시
      * public void practice1() {
      *  // 코드
@@ -23,6 +23,11 @@ public class PracticeMethods {
         
         MyThread t = new MyThread(); // 1. 새로운 MyThread 인스턴스 생성
         t.start(); // 2. Thread 클래스의 start 메서드 실행 = 새로운 쓰레드가 기동
+
+        // try{
+        //     t.sleep(1); // Q1. sleep() 메서드는 특정 인스턴스의 메서드를 호출하더라도, 호출한 해당 쓰레드가 sleep됨!!!! -> 성능이 좋아서 1ms까지는 줄여야 실습 가능
+        // }catch(InterruptedException e) {
+        // }
 
         for(int i = 0;i<1000; i++) {
             System.out.print("Good! "); // Q1. Good -> Nice 출력 | Good, Nice 섞여서 출력되는 이유 => 병행 처리의 순차적 실행 때문
@@ -67,11 +72,14 @@ public class PracticeMethods {
         // synchronized 메서드는 한번에 한개의 쓰레드 밖에 실행할 수 없다
         // synchronized 가 아닌 메서드는 동시에 2개 이상의 쓰레드에서도 실행할 수 있다
 
-        // wait, notify, notifyAll
+        // wait, notify, notifyAll -> Thread 클래스의 메소드가 아니라 Object의 메소드 = ㅆ레드 조작이라기 보단 인스턴스의 wait set에 대한 조작에 가깝다
+        // Q1. notify~로 깨워진 쓰레드가 대기해야할 때는, wait 셋에 들어가지 못하고 그냥 마냥 대기?
+        // TODO A1. Thread 클래스의 getState로 구하기? WAITING, TIMED_WAITING, BLOCKED ...
 
-        
         // synchronized 메서드 ?
         // synchronized 블록 ?
         Bank bank = new Bank(name, money); // TODO 스레드를 각자 실행해서 Bank 메서드를 호출하게
+        // TODO 테스트 용 코드 짜보기
     }
 }
+

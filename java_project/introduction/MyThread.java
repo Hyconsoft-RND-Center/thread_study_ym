@@ -1,4 +1,4 @@
-package java_project;
+package java_project.introduction;
 
 public class MyThread extends Thread {
     public void run() {
