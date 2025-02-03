@@ -79,7 +79,7 @@ public class PracticeMethods {
         // synchronized 메서드 ?
         // synchronized 블록 ?
         Bank bank = new Bank(name, money); // TODO 스레드를 각자 실행해서 Bank 메서드를 호출하게
-        // TODO 테스트 용 코드 짜보기
+        // TODO 테스트 용 코드 짜보기 p55
     }
 }
 
