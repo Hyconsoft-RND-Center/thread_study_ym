@@ -1,14 +1,13 @@
 package java_project.ch1;
 
+// gate의 클래스 -> gate 인스턴스를 만듬
+// 통과하는 인스턴스의 순서, 이름, 출신지를 기록
 public class Gate {
-    // gate의 클래스 -> gate 인스턴스를 만듬
-    // 통과하는 인스턴스의 순서, 이름, 출신지를 기록
-   
     private int count = 0; // 통과한 사람수 카운트 
     private String name = "Nobody"; // 가장 마지막에 문을 통과한 사람의 이름
     private String address = "Nowhere"; // 가장 마지막에 문을 통과한 사람의 출신지
 
-    // 문을 통과하는 메서드 // TODO 여기가 critical section 이다
+    // 문을 통과하는 메서드
     public void pass(String name, String address) {
     // public synchronized void pass(String name, String address) {
         this.count++;

@@ -1,10 +1,13 @@
-package java_project.ch1_practice_6;
+package java_project.ch1_practice_6.deadlock;
 
-public class EaterThread4 extends Thread {
+import java_project.ch1_practice_6.Tool;
+
+public class EaterThread extends Thread {
     private String name;
     private final Tool lefthand;
     private final Tool righthand;
-    public EaterThread4(String name, Tool lefthand, Tool righthand) {
+    public EaterThread(String name, Tool lefthand, Tool righthand) {
+        super(name);
         this.name = name;
         this.lefthand = lefthand;
         this.righthand = righthand;

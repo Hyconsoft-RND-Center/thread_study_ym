@@ -1,13 +1,34 @@
-package java_project.ch1_practice_6;
+package java_project.ch1_practice_6.deadlockSolved1;
 
-public class EaterThread extends Thread {
+import java_project.ch1_practice_6.Tool;
+
+public class EaterThread2 extends Thread {
     private String name;
     private final Tool lefthand;
     private final Tool righthand;
-    public EaterThread(String name, Tool lefthand, Tool righthand) {
+    public EaterThread2(String name, Tool lefthand, Tool righthand) {
+        super(name); // Thread 모니터링시 이름을 지정하면 COMMAND에서 확인이 더 쉬움
         this.name = name;
-        this.lefthand = lefthand;
-        this.righthand = righthand;
+
+        Tool tempLefthand;
+        Tool tempRighthand;
+        
+        if(lefthand == null) {
+            tempLefthand = new Tool(name+ "fork");
+        } else {
+            tempLefthand = lefthand;
+        }
+
+        if(righthand == null) {
+            tempRighthand = new Tool(name+ "fork");
+        } else {
+            tempRighthand = righthand;
+        }
+
+        // System.out.println("================================================="+ name + "???????" + tempLefthand + tempRighthand);
+    
+        this.lefthand = tempLefthand;
+        this.righthand = tempRighthand;
     }
 
     public void run() {
@@ -24,11 +45,11 @@ public class EaterThread extends Thread {
         // (lefthand lock을 취한 쓰레드가 righthand lock을 취할 수 있는 block을 진입해야하는데 lock이 없어서 계속 무한 대기, 다른 쓰레드도 마찬가지)
         synchronized (lefthand) {
             System.out.println(name + " takes up " + lefthand + " (left).");
-            synchronized (righthand) {
+            // synchronized (righthand) { // TODO 이 케이스는 righthand의 락이 없어도 됨
                 System.out.println(name + " takes up " + righthand + " (right).");
                 System.out.println(name + " is eating now, yum yum!");
                 System.out.println(name + " puts down " + righthand + " (right).");
-            }
+            // }
             System.out.println(name + " puts down " + lefthand + " (left).");
         }
     }

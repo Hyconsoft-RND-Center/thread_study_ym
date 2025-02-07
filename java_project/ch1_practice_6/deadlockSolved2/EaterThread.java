@@ -1,10 +1,12 @@
-package java_project.ch1_practice_6;
+package java_project.ch1_practice_6.deadlockSolved2;
 
-public class EaterThread2 extends Thread {
+import java_project.ch1_practice_6.Tool;
+
+public class EaterThread extends Thread {
     private String name;
     private final Tool lefthand;
     private final Tool righthand;
-    public EaterThread2(String name, Tool lefthand, Tool righthand) {
+    public EaterThread(String name, Tool lefthand, Tool righthand) {
         this.name = name;
         this.lefthand = lefthand;
         this.righthand = righthand;
