@@ -5,6 +5,7 @@ public class EaterThread3 extends Thread {
     private final Tool lefthand;
     private final Tool righthand;
     public EaterThread3(String name, Tool lefthand, Tool righthand) {
+        super(name); // Thread 모니터링시 이름을 지정하면 COMMAND에서 확인이 더 쉬움
         this.name = name;
 
         Tool tempLefthand;

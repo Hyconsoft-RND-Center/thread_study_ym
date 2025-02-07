@@ -8,8 +8,9 @@ public class Gate {
     private String name = "Nobody"; // 가장 마지막에 문을 통과한 사람의 이름
     private String address = "Nowhere"; // 가장 마지막에 문을 통과한 사람의 출신지
 
-    // 문을 통과하는 메서드
+    // 문을 통과하는 메서드 // TODO 여기가 critical section 이다
     public void pass(String name, String address) {
+    // public synchronized void pass(String name, String address) {
         this.count++;
         this.name = name;
         this.address = address;  
@@ -18,6 +19,7 @@ public class Gate {
 
     // 모든 필드를 하나의 완성된 포맷의 문장으로 만들어 리턴
     public String toString() {
+    // public synchronized String toString() {
         return "No." + count + ": "+ name + ", " + address;
     }
 

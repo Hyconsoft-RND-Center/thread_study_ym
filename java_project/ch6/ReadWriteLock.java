@@ -4,7 +4,6 @@ public class ReadWriteLock {
     private int readingReaders = 0; // (A) 실제로 읽고 있는 중인 쓰레드 수
     private int waitingWriters = 0; // (B) 쓰기를 기다리고 있는 쓰레드 수 // TODO 왜 필요?
     private int writingWriters = 0; // (C) 실제로 쓰고 있는 중인 쓰레드 수
-    // TODO???
     private boolean preferWriter = true; //쓰는 것을 우선하면 true, 읽기를 우선하면 false // 쓰레드의 생존성이 약해지는 것을 방지 
 
     public synchronized void readLock() throws InterruptedException {

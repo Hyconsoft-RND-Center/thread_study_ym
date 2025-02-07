@@ -11,17 +11,13 @@ public class Main {
         System.out.println("============ Testing Gate, hit CRTL+C to exit ============");
 
         // gate 생성
-        // Gate gate = new Gate();
-        Gate2 gate2 = new Gate2();
+        Gate gate = new Gate();
 
         // 3개의 인스턴스를 생성함
         // 3개의 인스턴스는 쓰레드들이고, 각자 다른 쓰레드를 기동시킴
         // 각 인스턴스를 gate로 통과시킴
-        // new UserThread(gate2, "Alice", "Alaska").start();
-        // new UserThread(gate2, "Bobby", "Brazil").start();
-        // new UserThread(gate2, "Chris", "Canada").start();
-        new UserThread2(gate2, "Alice", "Alaska").start();
-        new UserThread2(gate2, "Bobby", "Brazil").start();
-        new UserThread2(gate2, "Chris", "Canada").start();
+        new UserThread(gate, "Alice", "Alaska").start();
+        new UserThread(gate, "Bobby", "Brazil").start();
+        new UserThread(gate, "Chris", "Canada").start();
     }
 }

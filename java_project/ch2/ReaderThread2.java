@@ -6,7 +6,7 @@ import java.util.List;
 public class ReaderThread2 extends Thread {
     private final List<Integer> list;
     public ReaderThread2(List<Integer> list) {
-        super("ReaderThread"); // TODO? 왜 super?
+        super("ReaderThread");
         this.list=list;
     }
 

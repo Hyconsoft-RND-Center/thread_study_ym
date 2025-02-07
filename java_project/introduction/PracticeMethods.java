@@ -7,7 +7,19 @@ public class PracticeMethods {
      *  // 코드
      * }
      */
-    public void nothing() {
+    public void testSync() {
+        System.out.println("program START");
+        new Thread("youmee1") {
+            public void run() {
+                try {
+                    Thread.sleep(1000000);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                System.out.println("program END");
+            }
+        }.start();
     }
 
     // 싱글 스레드 실습
